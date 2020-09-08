@@ -12,6 +12,8 @@
           <e p="Air.png" t="Include" />
           <e p="Content.mgcb" t="Include" />
           <e p="Entity" t="Include">
+            <e p="CatLeft.png" t="Include" />
+            <e p="CatRight.png" t="Include" />
             <e p="Player0.png" t="Include" />
             <e p="Player1.png" t="Include" />
             <e p="Player2.png" t="Include" />
@@ -83,6 +85,8 @@
             <e p="DesktopGL" t="Include">
               <e p="Content" t="Include">
                 <e p="Entity" t="Include">
+                  <e p="CatLeft.xnb" t="Include" />
+                  <e p="CatRight.xnb" t="Include" />
                   <e p="Player0.xnb" t="Include" />
                   <e p="Player1.xnb" t="Include" />
                   <e p="Player2.xnb" t="Include" />
@@ -90,7 +94,9 @@
                   <e p="SpawnLoc.xnb" t="Include" />
                   <e p="Test.xnb" t="Include" />
                 </e>
-                <e p="Font/LiberationMono.xnb" t="Include" />
+                <e p="Font" t="Include">
+                  <e p="LiberationMono.xnb" t="Include" />
+                </e>
                 <e p="TextureMissing.xnb" t="Include" />
                 <e p="Tile" t="Include">
                   <e p="Air.xnb" t="Include" />
@@ -142,12 +148,21 @@
                 </e>
               </e>
               <e p="Entity" t="Include">
+                <e p="CatLeft.xnb" t="Include" />
+                <e p="CatRight.xnb" t="Include" />
                 <e p="Player0.xnb" t="Include" />
                 <e p="Player1.xnb" t="Include" />
                 <e p="Player2.xnb" t="Include" />
                 <e p="Player3.xnb" t="Include" />
+                <e p="SpawnLoc.xnb" t="Include" />
+                <e p="Test.xnb" t="Include" />
               </e>
+              <e p="Font" t="Include">
+                <e p="LiberationMono.xnb" t="Include" />
+              </e>
+              <e p="TextureMissing.xnb" t="Include" />
               <e p="Tile" t="Include">
+                <e p="Air.xnb" t="Include" />
                 <e p="Checkpoint0.xnb" t="Include" />
                 <e p="Checkpoint1.xnb" t="Include" />
                 <e p="GrippyCeiling0.xnb" t="Include" />
@@ -196,10 +211,14 @@
           </e>
           <e p="obj" t="Include">
             <e p="DesktopGL" t="Include">
+              <e p=".mgcontent" t="Include" />
+              <e p=".mgstats" t="Include" />
               <e p="Content" t="Include">
                 <e p=".mgcontent" t="Include" />
                 <e p=".mgstats" t="Include" />
                 <e p="Entity" t="Include">
+                  <e p="CatLeft.mgcontent" t="Include" />
+                  <e p="CatRight.mgcontent" t="Include" />
                   <e p="Player0.mgcontent" t="Include" />
                   <e p="Player1.mgcontent" t="Include" />
                   <e p="Player2.mgcontent" t="Include" />
@@ -261,12 +280,21 @@
                 </e>
               </e>
               <e p="Entity" t="Include">
+                <e p="CatLeft.mgcontent" t="Include" />
+                <e p="CatRight.mgcontent" t="Include" />
                 <e p="Player0.mgcontent" t="Include" />
                 <e p="Player1.mgcontent" t="Include" />
                 <e p="Player2.mgcontent" t="Include" />
                 <e p="Player3.mgcontent" t="Include" />
+                <e p="SpawnLoc.mgcontent" t="Include" />
+                <e p="Test.mgcontent" t="Include" />
               </e>
+              <e p="Font" t="Include">
+                <e p="LiberationMono.mgcontent" t="Include" />
+              </e>
+              <e p="TextureMissing.mgcontent" t="Include" />
               <e p="Tile" t="Include">
+                <e p="Air.mgcontent" t="Include" />
                 <e p="Checkpoint0.mgcontent" t="Include" />
                 <e p="Checkpoint1.mgcontent" t="Include" />
                 <e p="GrippyCeiling0.mgcontent" t="Include" />
@@ -319,6 +347,7 @@
         <e p="Levels" t="Include">
           <e p="level:0.xml" t="Include" />
           <e p="level:1.xml" t="Include" />
+          <e p="level:2.xml" t="Include" />
         </e>
         <e p="Microsoft.Xna.Framework.Content.ContentTypeReader" t="Include" />
         <e p="Output.log" t="Include" />
@@ -340,6 +369,7 @@
           </e>
           <e p="Entity" t="Include">
             <e p="Entities" t="Include">
+              <e p="Cat.cs" t="Include" />
               <e p="EntityTest.cs" t="Include" />
               <e p="Player.cs" t="Include" />
               <e p="PlayerOne.cs" t="Include" />
@@ -398,7 +428,7 @@
         <e p="app.manifest" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="PDD.AssemblyInfo.cs" t="Include" />
             </e>

@@ -16,7 +16,7 @@ namespace PDD.Entity
     public abstract class Player : MovingEntity
     {
         public override Size Size => new Size(16, 32);
-        public override bool Deadly => false;
+        public virtual bool Deadly => false;
         protected abstract PlayerIndex PlayerIndex { get; }
 
         protected Player()
@@ -88,7 +88,7 @@ namespace PDD.Entity
                 if (TileCheckArray.LowerLeft.TileId == Tiles.Portal || 
                     TileCheckArray.LowerRight.TileId == Tiles.Portal)
                 {
-                    var to = PortalData.Destinations[TileCheckArray.Lower.Index.Reverse()];
+                    var to = PortalData.Destinations[TileCheckArray.Lower.Index.Reverse() - Vector2.UnitX];
                     PddGame.FutureLevel = LevelFileManager.Load(to);
                     PddGame.FutureLevel.LoadEntityContent(contentManager);
                     PddGame.CurrentIndicator = "Teleporting...";
@@ -142,7 +142,7 @@ namespace PDD.Entity
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (obj.GetType() != GetType()) return false;
             return Equals((Player) obj);
         }
 

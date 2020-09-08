@@ -11,7 +11,8 @@ namespace PDD.Entity
     {
         public const int
             Test = 0,
-            PlayerOne = 1;
+            PlayerOne = 1,
+            Cat = 2;
         
         public static readonly Dictionary<int, Type> EntityList = new Dictionary<int, Type>();
 
@@ -19,6 +20,7 @@ namespace PDD.Entity
         {
             EntityList[Test] = typeof(EntityTest);
             EntityList[PlayerOne] = typeof(PlayerOne);
+            EntityList[Cat] = typeof(Cat);
             Logging.Info($"Initialized {EntityList.Count} entities.");
         }
         

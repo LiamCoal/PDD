@@ -175,5 +175,11 @@ namespace PDD.DataManagement
         public override int GetHashCode() => HashCode.Combine(X, Y);
         public override string ToString() => $"{nameof(X)}: {X}, {nameof(Y)}: {Y}";
         public LevelIndex Reverse() => new LevelIndex(Y, X);
+
+        public static LevelIndex operator +(LevelIndex index, Vector2 vector2)
+            => new LevelIndex((int) (index.X + vector2.X), (int) (index.Y + vector2.Y));
+
+        public static LevelIndex operator -(LevelIndex index, Vector2 vector2)
+            => index + -vector2;
     }
 }
