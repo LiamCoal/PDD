@@ -1,4 +1,6 @@
 # Please Don't Die
+![.NET Core Action Status](https://github.com/LiamCoal/PDD/workflows/.NET%20Core/badge.svg)
+
 Please Don't Die is a (relatively) simple game.
 
 ## Playing
