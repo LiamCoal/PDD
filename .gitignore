@@ -1,0 +1,6 @@
+output
+workspace.xml
+*.log
+output.xml
+bin
+obj

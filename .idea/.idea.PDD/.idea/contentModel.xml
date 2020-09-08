@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_PDD.-275714165.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="PDD" t="IncludeRecursive">
+        <e p="Addons" t="Include">
+          <e p="Core" t="Include" />
+        </e>
+        <e p="Content" t="Include">
+          <e p="Air.png" t="Include" />
+          <e p="Content.mgcb" t="Include" />
+          <e p="Entity" t="Include">
+            <e p="Player0.png" t="Include" />
+            <e p="Player1.png" t="Include" />
+            <e p="Player2.png" t="Include" />
+            <e p="Player3.png" t="Include" />
+            <e p="Players.zip" t="Include" />
+            <e p="SpawnLoc.png" t="Include" />
+            <e p="Test.png" t="Include" />
+          </e>
+          <e p="Font" t="Include">
+            <e p="LiberationMono.spritefont" t="Include" />
+          </e>
+          <e p="Ground0.png" t="Include" />
+          <e p="TextureMissing.png" t="Include" />
+          <e p="Tile" t="Include">
+            <e p="Air.png" t="Include" />
+            <e p="Checkpoint0.png" t="Include" />
+            <e p="Checkpoint1.png" t="Include" />
+            <e p="GrippyCeiling.png" t="Include" />
+            <e p="GrippyCeiling0.png" t="Include" />
+            <e p="GrippyCeiling1.png" t="Include" />
+            <e p="GrippyCeiling2.png" t="Include" />
+            <e p="InvisibleSolid.png" t="Include" />
+            <e p="Lava.png" t="Include" />
+            <e p="NormalGround0.png" t="Include" />
+            <e p="NormalGround1.png" t="Include" />
+            <e p="NormalGround2.png" t="Include" />
+            <e p="NormalGroundCornerBL.png" t="Include" />
+            <e p="NormalGroundCornerBR.png" t="Include" />
+            <e p="NormalGroundCornerTL.png" t="Include" />
+            <e p="NormalGroundCornerTR.png" t="Include" />
+            <e p="NormalGroundL0.png" t="Include" />
+            <e p="NormalGroundL1.png" t="Include" />
+            <e p="NormalGroundL2.png" t="Include" />
+            <e p="NormalGroundR0.png" t="Include" />
+            <e p="NormalGroundR1.png" t="Include" />
+            <e p="NormalGroundR2.png" t="Include" />
+            <e p="NormalGroundRotatedDown0.png" t="Include" />
+            <e p="NormalGroundRotatedDown1.png" t="Include" />
+            <e p="NormalGroundRotatedDown2.png" t="Include" />
+            <e p="NormalGroundRotatedLeft.zip" t="Include" />
+            <e p="NormalGroundRotatedLeft0.png" t="Include" />
+            <e p="NormalGroundRotatedLeft1.png" t="Include" />
+            <e p="NormalGroundRotatedLeft2.png" t="Include" />
+            <e p="NormalGroundRotatedRight0.png" t="Include" />
+            <e p="NormalGroundRotatedRight1.png" t="Include" />
+            <e p="NormalGroundRotatedRight2.png" t="Include" />
+            <e p="NormalGroundTurnLeft0.png" t="Include" />
+            <e p="NormalGroundTurnLeft1.png" t="Include" />
+            <e p="NormalGroundTurnLeft2.png" t="Include" />
+            <e p="NormalGroundTurnLeftDown0.png" t="Include" />
+            <e p="NormalGroundTurnLeftDown1.png" t="Include" />
+            <e p="NormalGroundTurnLeftDown2.png" t="Include" />
+            <e p="NormalGroundTurnRight0.png" t="Include" />
+            <e p="NormalGroundTurnRight1.png" t="Include" />
+            <e p="NormalGroundTurnRight2.png" t="Include" />
+            <e p="NormalGroundTurnRightDown0.png" t="Include" />
+            <e p="NormalGroundTurnRightDown1.png" t="Include" />
+            <e p="NormalGroundTurnRightDown2.png" t="Include" />
+            <e p="PDDCheckpoint.zip" t="Include" />
+            <e p="PDDGrippyCeiling.zip" t="Include" />
+            <e p="PDDNormalGroundRotatedDown.zip" t="Include" />
+            <e p="PDDNormalGroundRotatedRight.zip" t="Include" />
+            <e p="PDDNormalGroundTurnLeftDown.zip" t="Include" />
+            <e p="PDDNormalGroundTurnRightDown.zip" t="Include" />
+            <e p="Portal.png" t="Include" />
+            <e p="Spike.png" t="Include" />
+          </e>
+          <e p="bin" t="Include">
+            <e p="DesktopGL" t="Include">
+              <e p="Content" t="Include">
+                <e p="Entity" t="Include">
+                  <e p="Player0.xnb" t="Include" />
+                  <e p="Player1.xnb" t="Include" />
+                  <e p="Player2.xnb" t="Include" />
+                  <e p="Player3.xnb" t="Include" />
+                  <e p="SpawnLoc.xnb" t="Include" />
+                  <e p="Test.xnb" t="Include" />
+                </e>
+                <e p="Font" t="Include">
+                  <e p="LiberationMono.xnb" t="Include" />
+                </e>
+                <e p="TextureMissing.xnb" t="Include" />
+                <e p="Tile" t="Include">
+                  <e p="Air.xnb" t="Include" />
+                  <e p="Checkpoint0.xnb" t="Include" />
+                  <e p="Checkpoint1.xnb" t="Include" />
+                  <e p="GrippyCeiling0.xnb" t="Include" />
+                  <e p="GrippyCeiling1.xnb" t="Include" />
+                  <e p="GrippyCeiling2.xnb" t="Include" />
+                  <e p="InvisibleSolid.xnb" t="Include" />
+                  <e p="Lava.xnb" t="Include" />
+                  <e p="NormalGround0.xnb" t="Include" />
+                  <e p="NormalGround1.xnb" t="Include" />
+                  <e p="NormalGround2.xnb" t="Include" />
+                  <e p="NormalGroundCornerBL.xnb" t="Include" />
+                  <e p="NormalGroundCornerBR.xnb" t="Include" />
+                  <e p="NormalGroundCornerLeft.xnb" t="Include" />
+                  <e p="NormalGroundCornerRight.xnb" t="Include" />
+                  <e p="NormalGroundCornerTL.xnb" t="Include" />
+                  <e p="NormalGroundCornerTR.xnb" t="Include" />
+                  <e p="NormalGroundL0.xnb" t="Include" />
+                  <e p="NormalGroundL1.xnb" t="Include" />
+                  <e p="NormalGroundL2.xnb" t="Include" />
+                  <e p="NormalGroundR0.xnb" t="Include" />
+                  <e p="NormalGroundR1.xnb" t="Include" />
+                  <e p="NormalGroundR2.xnb" t="Include" />
+                  <e p="NormalGroundRotatedDown0.xnb" t="Include" />
+                  <e p="NormalGroundRotatedDown1.xnb" t="Include" />
+                  <e p="NormalGroundRotatedDown2.xnb" t="Include" />
+                  <e p="NormalGroundRotatedLeft0.xnb" t="Include" />
+                  <e p="NormalGroundRotatedLeft1.xnb" t="Include" />
+                  <e p="NormalGroundRotatedLeft2.xnb" t="Include" />
+                  <e p="NormalGroundRotatedRight0.xnb" t="Include" />
+                  <e p="NormalGroundRotatedRight1.xnb" t="Include" />
+                  <e p="NormalGroundRotatedRight2.xnb" t="Include" />
+                  <e p="NormalGroundTurnLeft0.xnb" t="Include" />
+                  <e p="NormalGroundTurnLeft1.xnb" t="Include" />
+                  <e p="NormalGroundTurnLeft2.xnb" t="Include" />
+                  <e p="NormalGroundTurnLeftDown0.xnb" t="Include" />
+                  <e p="NormalGroundTurnLeftDown1.xnb" t="Include" />
+                  <e p="NormalGroundTurnLeftDown2.xnb" t="Include" />
+                  <e p="NormalGroundTurnRight0.xnb" t="Include" />
+                  <e p="NormalGroundTurnRight1.xnb" t="Include" />
+                  <e p="NormalGroundTurnRight2.xnb" t="Include" />
+                  <e p="NormalGroundTurnRightDown0.xnb" t="Include" />
+                  <e p="NormalGroundTurnRightDown1.xnb" t="Include" />
+                  <e p="NormalGroundTurnRightDown2.xnb" t="Include" />
+                  <e p="Portal.xnb" t="Include" />
+                  <e p="Spike.xnb" t="Include" />
+                </e>
+              </e>
+              <e p="Entity" t="Include">
+                <e p="Player0.xnb" t="Include" />
+                <e p="Player1.xnb" t="Include" />
+                <e p="Player2.xnb" t="Include" />
+                <e p="Player3.xnb" t="Include" />
+                <e p="SpawnLoc.xnb" t="Include" />
+                <e p="Test.xnb" t="Include" />
+              </e>
+              <e p="Font" t="Include">
+                <e p="LiberationMono.xnb" t="Include" />
+              </e>
+              <e p="TextureMissing.xnb" t="Include" />
+              <e p="Tile" t="Include">
+                <e p="Air.xnb" t="Include" />
+                <e p="Checkpoint0.xnb" t="Include" />
+                <e p="Checkpoint1.xnb" t="Include" />
+                <e p="GrippyCeiling0.xnb" t="Include" />
+                <e p="GrippyCeiling1.xnb" t="Include" />
+                <e p="GrippyCeiling2.xnb" t="Include" />
+                <e p="InvisibleSolid.xnb" t="Include" />
+                <e p="Lava.xnb" t="Include" />
+                <e p="NormalGround0.xnb" t="Include" />
+                <e p="NormalGround1.xnb" t="Include" />
+                <e p="NormalGround2.xnb" t="Include" />
+                <e p="NormalGroundCornerBL.xnb" t="Include" />
+                <e p="NormalGroundCornerBR.xnb" t="Include" />
+                <e p="NormalGroundCornerTL.xnb" t="Include" />
+                <e p="NormalGroundCornerTR.xnb" t="Include" />
+                <e p="NormalGroundL0.xnb" t="Include" />
+                <e p="NormalGroundL1.xnb" t="Include" />
+                <e p="NormalGroundL2.xnb" t="Include" />
+                <e p="NormalGroundR0.xnb" t="Include" />
+                <e p="NormalGroundR1.xnb" t="Include" />
+                <e p="NormalGroundR2.xnb" t="Include" />
+                <e p="NormalGroundRotatedDown0.xnb" t="Include" />
+                <e p="NormalGroundRotatedDown1.xnb" t="Include" />
+                <e p="NormalGroundRotatedDown2.xnb" t="Include" />
+                <e p="NormalGroundRotatedLeft0.xnb" t="Include" />
+                <e p="NormalGroundRotatedLeft1.xnb" t="Include" />
+                <e p="NormalGroundRotatedLeft2.xnb" t="Include" />
+                <e p="NormalGroundRotatedRight0.xnb" t="Include" />
+                <e p="NormalGroundRotatedRight1.xnb" t="Include" />
+                <e p="NormalGroundRotatedRight2.xnb" t="Include" />
+                <e p="NormalGroundTurnLeft0.xnb" t="Include" />
+                <e p="NormalGroundTurnLeft1.xnb" t="Include" />
+                <e p="NormalGroundTurnLeft2.xnb" t="Include" />
+                <e p="NormalGroundTurnLeftDown0.xnb" t="Include" />
+                <e p="NormalGroundTurnLeftDown1.xnb" t="Include" />
+                <e p="NormalGroundTurnLeftDown2.xnb" t="Include" />
+                <e p="NormalGroundTurnRight0.xnb" t="Include" />
+                <e p="NormalGroundTurnRight1.xnb" t="Include" />
+                <e p="NormalGroundTurnRight2.xnb" t="Include" />
+                <e p="NormalGroundTurnRightDown0.xnb" t="Include" />
+                <e p="NormalGroundTurnRightDown1.xnb" t="Include" />
+                <e p="NormalGroundTurnRightDown2.xnb" t="Include" />
+                <e p="Portal.xnb" t="Include" />
+                <e p="Spike.xnb" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="obj" t="Include">
+            <e p="DesktopGL" t="Include">
+              <e p=".mgcontent" t="Include" />
+              <e p=".mgstats" t="Include" />
+              <e p="Content" t="Include">
+                <e p=".mgcontent" t="Include" />
+                <e p=".mgstats" t="Include" />
+                <e p="Entity" t="Include">
+                  <e p="Player0.mgcontent" t="Include" />
+                  <e p="Player1.mgcontent" t="Include" />
+                  <e p="Player2.mgcontent" t="Include" />
+                  <e p="Player3.mgcontent" t="Include" />
+                  <e p="SpawnLoc.mgcontent" t="Include" />
+                  <e p="Test.mgcontent" t="Include" />
+                </e>
+                <e p="Font" t="Include">
+                  <e p="LiberationMono.mgcontent" t="Include" />
+                </e>
+                <e p="TextureMissing.mgcontent" t="Include" />
+                <e p="Tile" t="Include">
+                  <e p="Air.mgcontent" t="Include" />
+                  <e p="Checkpoint0.mgcontent" t="Include" />
+                  <e p="Checkpoint1.mgcontent" t="Include" />
+                  <e p="GrippyCeiling0.mgcontent" t="Include" />
+                  <e p="GrippyCeiling1.mgcontent" t="Include" />
+                  <e p="GrippyCeiling2.mgcontent" t="Include" />
+                  <e p="InvisibleSolid.mgcontent" t="Include" />
+                  <e p="Lava.mgcontent" t="Include" />
+                  <e p="NormalGround0.mgcontent" t="Include" />
+                  <e p="NormalGround1.mgcontent" t="Include" />
+                  <e p="NormalGround2.mgcontent" t="Include" />
+                  <e p="NormalGroundCornerBL.mgcontent" t="Include" />
+                  <e p="NormalGroundCornerBR.mgcontent" t="Include" />
+                  <e p="NormalGroundCornerLeft.mgcontent" t="Include" />
+                  <e p="NormalGroundCornerRight.mgcontent" t="Include" />
+                  <e p="NormalGroundCornerTL.mgcontent" t="Include" />
+                  <e p="NormalGroundCornerTR.mgcontent" t="Include" />
+                  <e p="NormalGroundL0.mgcontent" t="Include" />
+                  <e p="NormalGroundL1.mgcontent" t="Include" />
+                  <e p="NormalGroundL2.mgcontent" t="Include" />
+                  <e p="NormalGroundR0.mgcontent" t="Include" />
+                  <e p="NormalGroundR1.mgcontent" t="Include" />
+                  <e p="NormalGroundR2.mgcontent" t="Include" />
+                  <e p="NormalGroundRotatedDown0.mgcontent" t="Include" />
+                  <e p="NormalGroundRotatedDown1.mgcontent" t="Include" />
+                  <e p="NormalGroundRotatedDown2.mgcontent" t="Include" />
+                  <e p="NormalGroundRotatedLeft0.mgcontent" t="Include" />
+                  <e p="NormalGroundRotatedLeft1.mgcontent" t="Include" />
+                  <e p="NormalGroundRotatedLeft2.mgcontent" t="Include" />
+                  <e p="NormalGroundRotatedRight0.mgcontent" t="Include" />
+                  <e p="NormalGroundRotatedRight1.mgcontent" t="Include" />
+                  <e p="NormalGroundRotatedRight2.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnLeft0.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnLeft1.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnLeft2.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnLeftDown0.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnLeftDown1.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnLeftDown2.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnRight0.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnRight1.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnRight2.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnRightDown0.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnRightDown1.mgcontent" t="Include" />
+                  <e p="NormalGroundTurnRightDown2.mgcontent" t="Include" />
+                  <e p="Portal.mgcontent" t="Include" />
+                  <e p="Spike.mgcontent" t="Include" />
+                </e>
+              </e>
+              <e p="Entity" t="Include">
+                <e p="Player0.mgcontent" t="Include" />
+                <e p="Player1.mgcontent" t="Include" />
+                <e p="Player2.mgcontent" t="Include" />
+                <e p="Player3.mgcontent" t="Include" />
+                <e p="SpawnLoc.mgcontent" t="Include" />
+                <e p="Test.mgcontent" t="Include" />
+              </e>
+              <e p="Font" t="Include">
+                <e p="LiberationMono.mgcontent" t="Include" />
+              </e>
+              <e p="TextureMissing.mgcontent" t="Include" />
+              <e p="Tile" t="Include">
+                <e p="Air.mgcontent" t="Include" />
+                <e p="Checkpoint0.mgcontent" t="Include" />
+                <e p="Checkpoint1.mgcontent" t="Include" />
+                <e p="GrippyCeiling0.mgcontent" t="Include" />
+                <e p="GrippyCeiling1.mgcontent" t="Include" />
+                <e p="GrippyCeiling2.mgcontent" t="Include" />
+                <e p="InvisibleSolid.mgcontent" t="Include" />
+                <e p="Lava.mgcontent" t="Include" />
+                <e p="NormalGround0.mgcontent" t="Include" />
+                <e p="NormalGround1.mgcontent" t="Include" />
+                <e p="NormalGround2.mgcontent" t="Include" />
+                <e p="NormalGroundCornerBL.mgcontent" t="Include" />
+                <e p="NormalGroundCornerBR.mgcontent" t="Include" />
+                <e p="NormalGroundCornerTL.mgcontent" t="Include" />
+                <e p="NormalGroundCornerTR.mgcontent" t="Include" />
+                <e p="NormalGroundL0.mgcontent" t="Include" />
+                <e p="NormalGroundL1.mgcontent" t="Include" />
+                <e p="NormalGroundL2.mgcontent" t="Include" />
+                <e p="NormalGroundR0.mgcontent" t="Include" />
+                <e p="NormalGroundR1.mgcontent" t="Include" />
+                <e p="NormalGroundR2.mgcontent" t="Include" />
+                <e p="NormalGroundRotatedDown0.mgcontent" t="Include" />
+                <e p="NormalGroundRotatedDown1.mgcontent" t="Include" />
+                <e p="NormalGroundRotatedDown2.mgcontent" t="Include" />
+                <e p="NormalGroundRotatedLeft0.mgcontent" t="Include" />
+                <e p="NormalGroundRotatedLeft1.mgcontent" t="Include" />
+                <e p="NormalGroundRotatedLeft2.mgcontent" t="Include" />
+                <e p="NormalGroundRotatedRight0.mgcontent" t="Include" />
+                <e p="NormalGroundRotatedRight1.mgcontent" t="Include" />
+                <e p="NormalGroundRotatedRight2.mgcontent" t="Include" />
+                <e p="NormalGroundTurnLeft0.mgcontent" t="Include" />
+                <e p="NormalGroundTurnLeft1.mgcontent" t="Include" />
+                <e p="NormalGroundTurnLeft2.mgcontent" t="Include" />
+                <e p="NormalGroundTurnLeftDown0.mgcontent" t="Include" />
+                <e p="NormalGroundTurnLeftDown1.mgcontent" t="Include" />
+                <e p="NormalGroundTurnLeftDown2.mgcontent" t="Include" />
+                <e p="NormalGroundTurnRight0.mgcontent" t="Include" />
+                <e p="NormalGroundTurnRight1.mgcontent" t="Include" />
+                <e p="NormalGroundTurnRight2.mgcontent" t="Include" />
+                <e p="NormalGroundTurnRightDown0.mgcontent" t="Include" />
+                <e p="NormalGroundTurnRightDown1.mgcontent" t="Include" />
+                <e p="NormalGroundTurnRightDown2.mgcontent" t="Include" />
+                <e p="Portal.mgcontent" t="Include" />
+                <e p="Spike.mgcontent" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Icon.bmp" t="Include" />
+        <e p="Icon.ico" t="Include" />
+        <e p="Levels" t="Include">
+          <e p="level:0.xml" t="Include" />
+          <e p="level:1.xml" t="Include" />
+        </e>
+        <e p="Microsoft.Xna.Framework.Content.ContentTypeReader" t="Include" />
+        <e p="Output.log" t="Include" />
+        <e p="PDD" t="Include">
+          <e p="Addons" t="Include">
+            <e p="DefaultLoader.cs" t="Include" />
+            <e p="Events.cs" t="Include" />
+            <e p="Loader.cs" t="Include" />
+          </e>
+          <e p="ConsoleOutput" t="Include">
+            <e p="Logging.cs" t="Include" />
+          </e>
+          <e p="DataManagement" t="Include">
+            <e p="Level.cs" t="Include" />
+            <e p="LevelFileManager.cs" t="Include" />
+            <e p="LevelOperationType.cs" t="Include" />
+            <e p="PortalData.cs" t="Include" />
+          </e>
+          <e p="Entity" t="Include">
+            <e p="Entities" t="Include">
+              <e p="EntityTest.cs" t="Include" />
+              <e p="Player.cs" t="Include" />
+              <e p="PlayerOne.cs" t="Include" />
+            </e>
+            <e p="Entities.cs" t="Include" />
+            <e p="IEntity.cs" t="Include" />
+            <e p="MovingEntity.cs" t="Include" />
+            <e p="TileCheckArray.cs" t="Include" />
+          </e>
+          <e p="Graphics" t="Include">
+            <e p="GraphicsManager.cs" t="Include" />
+            <e p="IndicatorType.cs" t="Include" />
+          </e>
+          <e p="ResourceLoading" t="Include">
+            <e p="IResourceLoader.cs" t="Include" />
+            <e p="MagicResourceInitializing.cs" t="Include" />
+          </e>
+          <e p="Start" t="Include">
+            <e p="PDDGame.cs" t="Include" />
+            <e p="Program.cs" t="Include" />
+          </e>
+          <e p="Tile" t="Include">
+            <e p="AnimatedTile.cs" t="Include" />
+            <e p="PlacedTile.cs" t="Include" />
+            <e p="Tile.cs" t="Include" />
+            <e p="Tiles" t="Include">
+              <e p="Air.cs" t="Include" />
+              <e p="Checkpoint.cs" t="Include" />
+              <e p="GrippyCeiling.cs" t="Include" />
+              <e p="InvisibleSolid.cs" t="Include" />
+              <e p="Lava.cs" t="Include" />
+              <e p="NormalGround.cs" t="Include" />
+              <e p="NormalGroundCornerBottomLeft.cs" t="Include" />
+              <e p="NormalGroundCornerBottomRight.cs" t="Include" />
+              <e p="NormalGroundCornerTopLeft.cs" t="Include" />
+              <e p="NormalGroundCornerTopRight.cs" t="Include" />
+              <e p="NormalGroundDown.cs" t="Include" />
+              <e p="NormalGroundDownFake.cs" t="Include" />
+              <e p="NormalGroundFake.cs" t="Include" />
+              <e p="NormalGroundLeft.cs" t="Include" />
+              <e p="NormalGroundLeftFake.cs" t="Include" />
+              <e p="NormalGroundRight.cs" t="Include" />
+              <e p="NormalGroundRightFake.cs" t="Include" />
+              <e p="NormalGroundTurnLeft.cs" t="Include" />
+              <e p="NormalGroundTurnLeftDown.cs" t="Include" />
+              <e p="NormalGroundTurnRight.cs" t="Include" />
+              <e p="NormalGroundTurnRightDown.cs" t="Include" />
+              <e p="Portal.cs" t="Include" />
+              <e p="Spike.cs" t="Include" />
+            </e>
+            <e p="Tiles.cs" t="Include" />
+          </e>
+        </e>
+        <e p="PDD.csproj" t="IncludeRecursive" />
+        <e p="PDD.csproj.DotSettings" t="Include" />
+        <e p="app.manifest" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="PDD.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="output.xml" t="Include" />
+        <e p="readme.txt" t="Include" />
+      </e>
+      <e p="PDD.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
