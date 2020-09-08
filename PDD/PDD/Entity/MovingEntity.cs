@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -99,6 +100,14 @@ namespace PDD.Entity
                                                              !Keyboard.GetState().IsKeyDown(Keys.S) ? 0 : 16)));
             }
             
+            environment.Entities.ForEach(entity =>
+            {
+                if (Intersects(this, entity))
+                {
+                    CollidedWithEntity?.Invoke(this, entity);
+                }
+            });
+            
             Velocity = velocity;
             ChangeVelocity();
             Position += Velocity;
@@ -109,7 +118,9 @@ namespace PDD.Entity
         protected virtual void ChangeVelocity() {}
         public abstract void LoadContent(ContentManager content);
         public event EventHandler<PlacedTile>? TouchingTile;
+        public event EventHandler<IEntity>? CollidedWithEntity; 
         public abstract Vector2 Position { get; set; }
+        public abstract Size Size { get; }
         public abstract int Id { get; }
         public abstract Texture2D GetTexture2D();
         public virtual void Update(GameTime gameTime, Level level) { }
@@ -136,6 +147,9 @@ namespace PDD.Entity
 
         public override string ToString() =>
             $"{nameof(TileCheckArray)}: {TileCheckArray}, {nameof(AllowGrounding)}: {AllowGrounding}, {nameof(Grounded)}: {Grounded}, {nameof(Velocity)}: {Velocity}, {nameof(Position)}: {Position}, {nameof(Id)}: {Id}";
+        
+        private static bool Intersects(IEntity entity1, IEntity entity2) =>
+            entity1.Rectangle.Intersects(entity2.Rectangle);
     }
     
     [Obsolete("Use MovingEntity instead.")]

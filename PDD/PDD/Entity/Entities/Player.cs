@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,6 +15,8 @@ namespace PDD.Entity
 {
     public abstract class Player : MovingEntity
     {
+        public override Size Size => new Size(16, 32);
+        public override bool Deadly => false;
         protected abstract PlayerIndex PlayerIndex { get; }
 
         public override void LoadContent(ContentManager content)

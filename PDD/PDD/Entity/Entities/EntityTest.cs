@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -28,6 +29,7 @@ namespace PDD.Entity
 
         public override Vector2 Position { get; set; }
 
+        public override Size Size => new Size(16, 32);
         public override int Id => Entities.Test;
         public override Texture2D GetTexture2D() => _texture;
 
