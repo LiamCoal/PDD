@@ -50,7 +50,7 @@ namespace PDD.Start
         private int _currentBlock, _currentPlaceMode;
 
         // ReSharper disable once MemberCanBePrivate.Global
-        public const string Version = "0.0.4::09072020/2";
+        public const string Version = "0.0.5::09082020/1";
 
         public PddGame()
         {
