@@ -1,3 +1,4 @@
+using PDD.DataManagement;
 using PDD.Start;
 
 namespace PDD.Tile
@@ -9,7 +10,7 @@ namespace PDD.Tile
 
         internal override bool IsSolid => true;
         internal override bool CanFall => false;
-        internal override bool Deadly => false;
+        internal override DeadlinessInfo Deadliness => new DeadlinessInfo(DeadlinessInfo.Deadly.Safe, "");
         internal override int TileId => 14;
     }
 }

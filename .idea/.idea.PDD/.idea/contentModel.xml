@@ -87,8 +87,13 @@
                   <e p="Player1.xnb" t="Include" />
                   <e p="Player2.xnb" t="Include" />
                   <e p="Player3.xnb" t="Include" />
+                  <e p="SpawnLoc.xnb" t="Include" />
+                  <e p="Test.xnb" t="Include" />
                 </e>
+                <e p="Font/LiberationMono.xnb" t="Include" />
+                <e p="TextureMissing.xnb" t="Include" />
                 <e p="Tile" t="Include">
+                  <e p="Air.xnb" t="Include" />
                   <e p="Checkpoint0.xnb" t="Include" />
                   <e p="Checkpoint1.xnb" t="Include" />
                   <e p="GrippyCeiling0.xnb" t="Include" />
@@ -192,13 +197,22 @@
           <e p="obj" t="Include">
             <e p="DesktopGL" t="Include">
               <e p="Content" t="Include">
+                <e p=".mgcontent" t="Include" />
+                <e p=".mgstats" t="Include" />
                 <e p="Entity" t="Include">
                   <e p="Player0.mgcontent" t="Include" />
                   <e p="Player1.mgcontent" t="Include" />
                   <e p="Player2.mgcontent" t="Include" />
                   <e p="Player3.mgcontent" t="Include" />
+                  <e p="SpawnLoc.mgcontent" t="Include" />
+                  <e p="Test.mgcontent" t="Include" />
                 </e>
+                <e p="Font" t="Include">
+                  <e p="LiberationMono.mgcontent" t="Include" />
+                </e>
+                <e p="TextureMissing.mgcontent" t="Include" />
                 <e p="Tile" t="Include">
+                  <e p="Air.mgcontent" t="Include" />
                   <e p="Checkpoint0.mgcontent" t="Include" />
                   <e p="Checkpoint1.mgcontent" t="Include" />
                   <e p="GrippyCeiling0.mgcontent" t="Include" />
@@ -307,6 +321,7 @@
           <e p="level:1.xml" t="Include" />
         </e>
         <e p="Microsoft.Xna.Framework.Content.ContentTypeReader" t="Include" />
+        <e p="Output.log" t="Include" />
         <e p="PDD" t="Include">
           <e p="Addons" t="Include">
             <e p="DefaultLoader.cs" t="Include" />
@@ -317,6 +332,7 @@
             <e p="Logging.cs" t="Include" />
           </e>
           <e p="DataManagement" t="Include">
+            <e p="DeadlinessInfo.cs" t="Include" />
             <e p="Level.cs" t="Include" />
             <e p="LevelFileManager.cs" t="Include" />
             <e p="LevelOperationType.cs" t="Include" />
@@ -381,7 +397,13 @@
         <e p="PDD.csproj.DotSettings" t="Include" />
         <e p="app.manifest" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="PDD.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="output.xml" t="Include" />
         <e p="readme.txt" t="Include" />
       </e>

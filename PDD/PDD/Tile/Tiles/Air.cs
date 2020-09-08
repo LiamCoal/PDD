@@ -1,3 +1,5 @@
+using PDD.DataManagement;
+
 namespace PDD.Tile
 {
     /*
@@ -11,7 +13,7 @@ namespace PDD.Tile
         protected override string TileTexturePath => "Tile/Air";
         internal override bool IsSolid => false;
         internal override bool CanFall => false;
-        internal override bool Deadly => false;
+        internal override DeadlinessInfo Deadliness => new DeadlinessInfo(DeadlinessInfo.Deadly.Safe, "");
         internal override int TileId => 0;
     }
 }

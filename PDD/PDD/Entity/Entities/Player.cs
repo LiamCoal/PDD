@@ -19,6 +19,17 @@ namespace PDD.Entity
         public override bool Deadly => false;
         protected abstract PlayerIndex PlayerIndex { get; }
 
+        protected Player()
+        {
+            CollidedWithEntity += OnCollidedWithEntity;
+        }
+
+        private void OnCollidedWithEntity(object? sender, IEntity e)
+        {
+            if(e.Deadliness.IsDeadly == DeadlinessInfo.Deadly.Deadly)
+                Damage(e.Deadliness);
+        }
+
         public override void LoadContent(ContentManager content)
         {
             _texture = content.Load<Texture2D>($"Entity/Player{ToInt(PlayerIndex) - 1}");
@@ -54,7 +65,7 @@ namespace PDD.Entity
 
             if (Keyboard.GetState().IsKeyDown(Keys.R) && PddGame.Mode == Mode.Default)
             {
-                Damage();
+                Damage(new DeadlinessInfo(DeadlinessInfo.Deadly.Safe, ""));
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.W) && Grounded)
@@ -89,25 +100,32 @@ namespace PDD.Entity
             catch (KeyNotFoundException e)
             {
                 Logging.Error(e.Message);
-                Damage();
             }
 
-            if (TileCheckArray.Lower.Tile.Deadly) Damage();
-            if (TileCheckArray.Upper.Tile.Deadly) Damage();
-            if (TileCheckArray.LowerLeft.Tile.Deadly) Damage();
-            if (TileCheckArray.LowerRight.Tile.Deadly) Damage();
-            if (TileCheckArray.UpperLeft.Tile.Deadly) Damage();
-            if (TileCheckArray.UpperRight.Tile.Deadly) Damage();
+            if (TileCheckArray.Lower.Tile.Deadliness.IsDeadlyBool) Damage(TileCheckArray.Lower.Tile.Deadliness);
+            if (TileCheckArray.Upper.Tile.Deadliness.IsDeadlyBool) Damage(TileCheckArray.Upper.Tile.Deadliness);
+            if (TileCheckArray.LowerLeft.Tile.Deadliness.IsDeadlyBool) Damage(TileCheckArray.LowerLeft.Tile.Deadliness);
+            if (TileCheckArray.LowerRight.Tile.Deadliness.IsDeadlyBool) Damage(TileCheckArray.LowerRight.Tile.Deadliness);
+            if (TileCheckArray.UpperLeft.Tile.Deadliness.IsDeadlyBool) Damage(TileCheckArray.UpperLeft.Tile.Deadliness);
+            if (TileCheckArray.UpperRight.Tile.Deadliness.IsDeadlyBool) Damage(TileCheckArray.UpperRight.Tile.Deadliness);
             
-            if (TileCheckArray.Lower.TileId == Tiles.Checkpoint) StartingPosition = TileCheckArray.Lower.Vector * 16;
-            if (TileCheckArray.Upper.TileId == Tiles.Checkpoint) StartingPosition = TileCheckArray.Upper.Vector * 16;
-            if (TileCheckArray.LowerLeft.TileId == Tiles.Checkpoint) StartingPosition = TileCheckArray.LowerLeft.Vector * 16;
-            if (TileCheckArray.LowerRight.TileId == Tiles.Checkpoint) StartingPosition = TileCheckArray.LowerRight.Vector * 16;
-            if (TileCheckArray.UpperLeft.TileId == Tiles.Checkpoint) StartingPosition = TileCheckArray.UpperLeft.Vector * 16;
-            if (TileCheckArray.UpperRight.TileId == Tiles.Checkpoint) StartingPosition = TileCheckArray.UpperRight.Vector * 16;
+            if (TileCheckArray.Lower.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.Lower);
+            if (TileCheckArray.Upper.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.Upper);
+            if (TileCheckArray.LowerLeft.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.LowerLeft);
+            if (TileCheckArray.LowerRight.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.LowerRight);
+            if (TileCheckArray.UpperLeft.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.UpperLeft);
+            if (TileCheckArray.UpperRight.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.UpperRight);
 
             // Logging.Info($"{velocity}");
             base.SetNextPosition(environment, contentManager);
+        }
+
+        private void SetCheckPoint(PlacedTile tile)
+        {
+            StartingPosition = tile.Vector * 16;
+            PddGame.CurrentIndicator = "Checkpoint reached!";
+            PddGame.CurrentIndicatorTtl = 120;
+            PddGame.CurrentIndicatorType = IndicatorType.Status;
         }
 
         protected bool Equals(Player other)
@@ -133,11 +151,11 @@ namespace PDD.Entity
             return HashCode.Combine(base.GetHashCode(), _texture, StartingPosition, (int) PlayerIndex);
         }
 
-        private void Damage()
+        private void Damage(DeadlinessInfo deadlinessInfo)
         {
             Position = StartingPosition;
             Velocity = Vector2.Zero;
-            PddGame.CurrentIndicator = "You died!";
+            PddGame.CurrentIndicator = deadlinessInfo.Message;
             PddGame.CurrentIndicatorTtl = 120;
             PddGame.CurrentIndicatorType = IndicatorType.Status;
             Death?.Invoke(this, EventArgs.Empty);
@@ -147,7 +165,8 @@ namespace PDD.Entity
 
         private Texture2D? _texture;
         public Vector2 StartingPosition = Vector2.One;
-        
+        public override DeadlinessInfo Deadliness => new DeadlinessInfo(DeadlinessInfo.Deadly.Safe, "");
+
         public event EventHandler? Death;
     }
 }

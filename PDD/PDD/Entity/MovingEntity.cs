@@ -122,6 +122,8 @@ namespace PDD.Entity
         public abstract Vector2 Position { get; set; }
         public abstract Size Size { get; }
         public abstract int Id { get; }
+        public abstract DeadlinessInfo Deadliness { get; }
+        public abstract bool Deadly { get; }
         public abstract Texture2D GetTexture2D();
         public virtual void Update(GameTime gameTime, Level level) { }
 

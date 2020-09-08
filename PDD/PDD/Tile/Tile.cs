@@ -13,7 +13,7 @@ namespace PDD.Tile
         internal abstract bool IsSolid { get; } // TODO unused
         // ReSharper disable once UnusedMember.Global
         internal abstract bool CanFall { get; } // TODO unused
-        internal abstract bool Deadly { get; }
+        internal abstract DeadlinessInfo Deadliness { get; }
         internal abstract int TileId { get; }
 
         public virtual void LoadContent(ContentManager content)
