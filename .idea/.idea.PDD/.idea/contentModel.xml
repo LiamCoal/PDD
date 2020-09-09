@@ -116,6 +116,7 @@
                     <e p="BGMusic0.ogg" t="Include" />
                     <e p="BGMusic0.xnb" t="Include" />
                   </e>
+                  <e p="Portal.xnb" t="Include" />
                 </e>
                 <e p="TextureMissing.xnb" t="Include" />
                 <e p="Tile" t="Include">
@@ -266,6 +267,7 @@
                   <e p="Music" t="Include">
                     <e p="BGMusic0.mgcontent" t="Include" />
                   </e>
+                  <e p="Portal.mgcontent" t="Include" />
                 </e>
                 <e p="TextureMissing.mgcontent" t="Include" />
                 <e p="Tile" t="Include">
@@ -394,6 +396,7 @@
           <e p="level:0.xml" t="Include" />
           <e p="level:1.xml" t="Include" />
           <e p="level:2.xml" t="Include" />
+          <e p="level:3.xml" t="Include" />
         </e>
         <e p="Microsoft.Xna.Framework.Content.ContentTypeReader" t="Include" />
         <e p="Output.log" t="Include" />
@@ -474,7 +477,7 @@
         <e p="app.manifest" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
+          <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="PDD.AssemblyInfo.cs" t="Include" />
             </e>
