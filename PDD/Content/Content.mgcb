@@ -116,6 +116,42 @@
 /processorParam:TextureFormat=Compressed
 /build:Font/LiberationMono.spritefont
 
+#begin Sound/Die.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Die.wav
+
+#begin Sound/IntentionalDie.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/IntentionalDie.wav
+
+#begin Sound/Jump.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Jump.wav
+
+#begin Sound/Land.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Land.wav
+
+#begin Sound/Music/BGMusic0.wav
+/importer:WavImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sound/Music/BGMusic0.wav
+
+#begin Sound/Portal.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Portal.wav
+
 #begin TextureMissing.png
 /importer:TextureImporter
 /processor:TextureProcessor

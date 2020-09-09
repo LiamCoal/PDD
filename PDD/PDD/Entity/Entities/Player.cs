@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -19,6 +20,22 @@ namespace PDD.Entity
         public virtual bool Deadly => false;
         protected abstract PlayerIndex PlayerIndex { get; }
 
+        private SoundEffect 
+            _jumpSound, 
+            _landSound, 
+            _dieSound, 
+            _intentionalDieSound,
+            _portalSound;
+        private SoundEffectInstance 
+            _jumpSoundInstance, 
+            _landSoundInstance, 
+            _dieSoundInstance,
+            _intentionalDieSoundInstance,
+            _portalSoundInstance;
+        private bool _prevGrounded = false;
+
+        private KeyboardState _prevKeyboardState = Keyboard.GetState();
+
         protected Player()
         {
             CollidedWithEntity += OnCollidedWithEntity;
@@ -33,6 +50,21 @@ namespace PDD.Entity
         public override void LoadContent(ContentManager content)
         {
             _texture = content.Load<Texture2D>($"Entity/Player{ToInt(PlayerIndex) - 1}");
+            _jumpSound = content.Load<SoundEffect>("Sound/Jump");
+            _jumpSoundInstance = _jumpSound.CreateInstance();
+            _jumpSoundInstance.IsLooped = false;
+            _landSound = content.Load<SoundEffect>("Sound/Land");
+            _landSoundInstance = _landSound.CreateInstance();
+            _landSoundInstance.IsLooped = false;
+            _dieSound = content.Load<SoundEffect>("Sound/Die");
+            _dieSoundInstance = _dieSound.CreateInstance();
+            _dieSoundInstance.IsLooped = false;
+            _intentionalDieSound = content.Load<SoundEffect>("Sound/IntentionalDie");
+            _intentionalDieSoundInstance = _intentionalDieSound.CreateInstance();
+            _intentionalDieSoundInstance.IsLooped = false;
+            _portalSound = content.Load<SoundEffect>("Sound/Portal");
+            _portalSoundInstance = _portalSound.CreateInstance();
+            _portalSoundInstance.IsLooped = false;
         }
 
         private static int ToInt(PlayerIndex index)
@@ -63,15 +95,18 @@ namespace PDD.Entity
                 // Logging.Info("moving left");
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.R) && PddGame.Mode == Mode.Default)
+            if (Keyboard.GetState().IsKeyDown(Keys.R) && PddGame.Mode == Mode.Default &&
+                !_prevKeyboardState.IsKeyDown(Keys.R))
             {
-                Damage(new DeadlinessInfo(DeadlinessInfo.Deadly.Safe, ""));
+                Damage(new DeadlinessInfo(DeadlinessInfo.Deadly.Safe, ""), true);
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.W) && Grounded)
             {
                 velocity.Y -= 3.00f;
                 AllowGrounding = false;
+                _jumpSoundInstance.Stop();
+                _jumpSoundInstance.Play();
                 // Logging.Info("Jumping");
             }
 
@@ -94,6 +129,8 @@ namespace PDD.Entity
                     PddGame.CurrentIndicator = "Teleporting...";
                     PddGame.CurrentIndicatorTtl = 120;
                     PddGame.CurrentIndicatorType = IndicatorType.Status;
+                    _portalSoundInstance.Stop();
+                    _portalSoundInstance.Play();
                     return;
                 }
             }
@@ -109,14 +146,29 @@ namespace PDD.Entity
             if (TileCheckArray.UpperLeft.Tile.Deadliness.IsDeadlyBool) Damage(TileCheckArray.UpperLeft.Tile.Deadliness);
             if (TileCheckArray.UpperRight.Tile.Deadliness.IsDeadlyBool) Damage(TileCheckArray.UpperRight.Tile.Deadliness);
             
-            if (TileCheckArray.Lower.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.Lower);
-            if (TileCheckArray.Upper.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.Upper);
-            if (TileCheckArray.LowerLeft.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.LowerLeft);
-            if (TileCheckArray.LowerRight.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.LowerRight);
-            if (TileCheckArray.UpperLeft.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.UpperLeft);
-            if (TileCheckArray.UpperRight.TileId == Tiles.Checkpoint) SetCheckPoint(TileCheckArray.UpperRight);
+            if (TileCheckArray.Lower.TileId == Tiles.Checkpoint && StartingPosition != TileCheckArray.Lower.Vector * 16)
+                SetCheckPoint(TileCheckArray.Lower);
+            if (TileCheckArray.Upper.TileId == Tiles.Checkpoint && StartingPosition != TileCheckArray.Upper.Vector * 16) 
+                SetCheckPoint(TileCheckArray.Upper);
+            if (TileCheckArray.LowerLeft.TileId == Tiles.Checkpoint && StartingPosition != TileCheckArray.LowerLeft.Vector * 16)
+                SetCheckPoint(TileCheckArray.LowerLeft);
+            if (TileCheckArray.LowerRight.TileId == Tiles.Checkpoint && StartingPosition != TileCheckArray.LowerRight.Vector * 16)
+                SetCheckPoint(TileCheckArray.LowerRight);
+            if (TileCheckArray.UpperLeft.TileId == Tiles.Checkpoint && StartingPosition != TileCheckArray.UpperLeft.Vector * 16)
+                SetCheckPoint(TileCheckArray.UpperLeft);
+            if (TileCheckArray.UpperRight.TileId == Tiles.Checkpoint && StartingPosition != TileCheckArray.UpperRight.Vector * 16) SetCheckPoint(TileCheckArray.UpperRight);
 
             // Logging.Info($"{velocity}");
+            
+            if (!_prevGrounded && Grounded && _landSoundCooldown == 0)
+            {
+                _landSoundInstance.Stop();
+                _landSoundInstance.Play();
+            }
+
+            if (_landSoundCooldown > 0) _landSoundCooldown--;
+            _prevGrounded = Grounded;
+            _prevKeyboardState = Keyboard.GetState();
             base.SetNextPosition(environment, contentManager);
         }
 
@@ -126,6 +178,7 @@ namespace PDD.Entity
             PddGame.CurrentIndicator = "Checkpoint reached!";
             PddGame.CurrentIndicatorTtl = 120;
             PddGame.CurrentIndicatorType = IndicatorType.Status;
+            Logging.Info($"{StartingPosition} {tile.Vector}");
         }
 
         protected bool Equals(Player other)
@@ -151,7 +204,7 @@ namespace PDD.Entity
             return HashCode.Combine(base.GetHashCode(), _texture, StartingPosition, (int) PlayerIndex);
         }
 
-        private void Damage(DeadlinessInfo deadlinessInfo)
+        private void Damage(DeadlinessInfo deadlinessInfo, bool intentional = false)
         {
             Position = StartingPosition;
             Velocity = Vector2.Zero;
@@ -159,12 +212,24 @@ namespace PDD.Entity
             PddGame.CurrentIndicatorTtl = 120;
             PddGame.CurrentIndicatorType = IndicatorType.Status;
             Death?.Invoke(this, EventArgs.Empty);
+            if (intentional)
+            {
+                _intentionalDieSoundInstance.Stop();
+                _intentionalDieSoundInstance.Play();
+            }
+            else
+            {
+                _dieSoundInstance.Stop();
+                _dieSoundInstance.Play();
+            }
+            _landSoundCooldown = 5;
         }
 
         public override Texture2D GetTexture2D() => _texture!;
 
         private Texture2D? _texture;
         public Vector2 StartingPosition = Vector2.One;
+        private int _landSoundCooldown = 15;
         public override DeadlinessInfo Deadliness => new DeadlinessInfo(DeadlinessInfo.Deadly.Safe, "");
 
         public event EventHandler? Death;

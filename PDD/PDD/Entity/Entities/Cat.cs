@@ -30,7 +30,7 @@ namespace PDD.Entity
             base.SetNextPosition(environment, contentManager);
             if ((_facing == Facing.Left ? TileCheckArray!.LowerLeft : TileCheckArray!.LowerRight).Tile.IsSolid)
             {
-                Logging.Info($"{(_facing == Facing.Left ? TileCheckArray!.LowerLeft : TileCheckArray!.LowerRight).Vector} = {(_facing == Facing.Left ? TileCheckArray!.LowerLeft : TileCheckArray!.LowerRight).Tile}");
+                //Logging.Info($"{(_facing == Facing.Left ? TileCheckArray!.LowerLeft : TileCheckArray!.LowerRight).Vector} = {(_facing == Facing.Left ? TileCheckArray!.LowerLeft : TileCheckArray!.LowerRight).Tile}");
                 _facing = _facing == Facing.Left ? Facing.Right : Facing.Left;
             }
             Velocity = new Vector2(_facing == Facing.Left ? -1.0f : 1.0f, Velocity.Y);

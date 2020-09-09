@@ -7,6 +7,7 @@ using Additive;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using PDD.Addons;
 using PDD.DataManagement;
 using PDD.Entity;
@@ -48,6 +49,7 @@ namespace PDD.Start
         public static Mode Mode = Mode.Default;
         private MouseState _prevMouseState;
         private int _currentBlock, _currentPlaceMode;
+        public static Song BackgroundMusic = null!;
 
         // ReSharper disable once MemberCanBePrivate.Global
         public const string Version = "0.0.5::09082020/1";
@@ -208,6 +210,11 @@ namespace PDD.Start
             //         Scale = (float)ScreenSize.Height / _background.Height
             //     });
             // }
+
+            BackgroundMusic = Content.Load<Song>("Sound/Music/BGMusic0");
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = 0.25f;
+            MediaPlayer.Play(BackgroundMusic);
 
             Info("Loading content from addons...");
             Events.OnLoadContent(Content);
