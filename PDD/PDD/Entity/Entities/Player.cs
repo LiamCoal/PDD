@@ -21,18 +21,36 @@ namespace PDD.Entity
         protected abstract PlayerIndex PlayerIndex { get; }
         public bool UsingSounds = true;
 
-        private SoundEffect 
-            _jumpSound, 
-            _landSound, 
-            _dieSound, 
-            _intentionalDieSound,
+        private SoundEffect? 
+            _jumpSound;
+
+        private SoundEffect? 
+            _landSound;
+
+        private SoundEffect? 
+            _dieSound;
+
+        private SoundEffect? 
+            _intentionalDieSound;
+
+        private SoundEffect? 
             _portalSound;
-        private SoundEffectInstance 
-            _jumpSoundInstance, 
-            _landSoundInstance, 
-            _dieSoundInstance,
-            _intentionalDieSoundInstance,
+
+        private SoundEffectInstance? 
+            _jumpSoundInstance;
+
+        private SoundEffectInstance? 
+            _landSoundInstance;
+
+        private SoundEffectInstance? 
+            _dieSoundInstance;
+
+        private SoundEffectInstance? 
+            _intentionalDieSoundInstance;
+
+        private SoundEffectInstance? 
             _portalSoundInstance;
+
         private bool _prevGrounded = false;
 
         private KeyboardState _prevKeyboardState = Keyboard.GetState();

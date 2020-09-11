@@ -41,7 +41,7 @@ namespace PDD.Graphics
         // ReSharper disable once MemberCanBePrivate.Global
         public static readonly List<DrawableObject> BackgroundLayer = new List<DrawableObject>(); // unused
 
-        private static Texture2D MissingTexture;
+        private static Texture2D? MissingTexture;
 
         /// <summary>
         /// Allows the drawing of layers.
