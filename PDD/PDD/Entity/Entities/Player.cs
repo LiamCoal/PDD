@@ -134,8 +134,8 @@ namespace PDD.Entity
                 AllowGrounding = false;
                 if (UsingSounds)
                 {
-                    _jumpSoundInstance.Stop();
-                    _jumpSoundInstance.Play();
+                    _jumpSoundInstance?.Stop();
+                    _jumpSoundInstance?.Play();
                 }
                 // Logging.Info("Jumping");
             }
@@ -160,8 +160,8 @@ namespace PDD.Entity
                     PddGame.CurrentIndicatorTtl = 120;
                     PddGame.CurrentIndicatorType = IndicatorType.Status;
                     if (!UsingSounds) return;
-                    _portalSoundInstance.Stop();
-                    _portalSoundInstance.Play();
+                    _portalSoundInstance?.Stop();
+                    _portalSoundInstance?.Play();
                     return;
                 }
             }
@@ -193,8 +193,8 @@ namespace PDD.Entity
             
             if (!_prevGrounded && Grounded && _landSoundCooldown == 0 && UsingSounds)
             {
-                _landSoundInstance.Stop();
-                _landSoundInstance.Play();
+                _landSoundInstance?.Stop();
+                _landSoundInstance?.Play();
             }
 
             if (_landSoundCooldown > 0) _landSoundCooldown--;
@@ -247,19 +247,19 @@ namespace PDD.Entity
             {
                 if (intentional)
                 {
-                    _intentionalDieSoundInstance.Stop();
-                    _intentionalDieSoundInstance.Play();
+                    _intentionalDieSoundInstance?.Stop();
+                    _intentionalDieSoundInstance?.Play();
                 }
                 else
                 {
-                    _dieSoundInstance.Stop();
-                    _dieSoundInstance.Play();
+                    _dieSoundInstance?.Stop();
+                    _dieSoundInstance?.Play();
                 }
             }
             _landSoundCooldown = 5;
         }
 
-        public override Texture2D GetTexture2D() => _texture!;
+        public override Texture2D? GetTexture2D() => _texture!;
 
         private Texture2D? _texture;
         public Vector2 StartingPosition = Vector2.One;

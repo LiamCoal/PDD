@@ -434,7 +434,7 @@ namespace PDD.Start
                     GraphicsManager.MainLayer.Add(new GraphicsManager.DrawableObject
                     {
                         Position = entity.Position,
-                        Texture = entity.GetTexture2D()
+                        Texture = entity.GetTexture2D()!
                     });
                 }
             }
@@ -463,14 +463,14 @@ namespace PDD.Start
                 var wid = _currentPlaceMode switch
                 {
                     0 => _drawDragFrame ? ((int) Math.Abs(_startDrag.X - _endDrag.X) + 1) * 16 : 16,
-                    1 => _entities![_currentBlock].GetTexture2D().Width,
+                    1 => _entities![_currentBlock].GetTexture2D()!.Width,
                     2 => 16,
                     _ => 0
                 };
                 var hei = _currentPlaceMode switch
                 {
                     0 => _drawDragFrame ? ((int) Math.Abs(_startDrag.Y - _endDrag.Y) + 1) * 16 : 16,
-                    1 => _entities![_currentBlock].GetTexture2D().Height,
+                    1 => _entities![_currentBlock].GetTexture2D()!.Height,
                     2 => 16,
                     _ => 0
                 };
@@ -504,8 +504,8 @@ namespace PDD.Start
                 int wid, hei;
                 if (Mode == Mode.LevelEditor)
                 {
-                    wid = entity.GetTexture2D().Width;
-                    hei = entity.GetTexture2D().Height;
+                    wid = entity.GetTexture2D()!.Width;
+                    hei = entity.GetTexture2D()!.Height;
                 }
                 else
                 {

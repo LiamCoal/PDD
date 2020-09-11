@@ -24,7 +24,7 @@ namespace PDD.Entity
         public override DeadlinessInfo Deadliness => new DeadlinessInfo(DeadlinessInfo.Deadly.Deadly, "You were scratched...");
         private Texture2D? _leftTexture2D, _rightTexture2D;
         private Facing _facing = Facing.Left;
-        public override Texture2D GetTexture2D() => _facing == Facing.Left ? _leftTexture2D : _rightTexture2D;
+        public override Texture2D? GetTexture2D() => _facing == Facing.Left ? _leftTexture2D : _rightTexture2D;
         public override void SetNextPosition(Level environment, ContentManager contentManager)
         {
             base.SetNextPosition(environment, contentManager);

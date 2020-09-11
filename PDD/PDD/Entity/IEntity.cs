@@ -17,7 +17,7 @@ namespace PDD.Entity
         public int Id { get; }
         public DeadlinessInfo Deadliness { get; }
 
-        public Texture2D GetTexture2D();
+        public Texture2D? GetTexture2D();
         public void Update(GameTime gameTime, Level level);
         
         

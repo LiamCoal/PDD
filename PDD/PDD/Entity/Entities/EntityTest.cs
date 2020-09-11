@@ -33,7 +33,7 @@ namespace PDD.Entity
         public override Size Size => new Size(16, 32);
         public override int Id => Entities.Test;
         public override DeadlinessInfo Deadliness => new DeadlinessInfo(DeadlinessInfo.Deadly.Deadly, "You were tested...");
-        public override Texture2D GetTexture2D() => _texture;
+        public override Texture2D? GetTexture2D() => _texture;
 
         public override void LoadContent(ContentManager content)
         {

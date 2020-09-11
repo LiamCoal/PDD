@@ -137,7 +137,7 @@ namespace PDD.Entity
         public abstract Size Size { get; }
         public abstract int Id { get; }
         public abstract DeadlinessInfo Deadliness { get; }
-        public abstract Texture2D GetTexture2D();
+        public abstract Texture2D? GetTexture2D();
         public virtual void Update(GameTime gameTime, Level level) { }
         public virtual CollisionType CollisionType { get; }
 
