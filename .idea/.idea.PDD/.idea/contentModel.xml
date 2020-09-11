@@ -393,10 +393,14 @@
         <e p="Icon.bmp" t="Include" />
         <e p="Icon.ico" t="Include" />
         <e p="Levels" t="Include">
-          <e p="level:0.xml" t="Include" />
-          <e p="level:1.xml" t="Include" />
-          <e p="level:2.xml" t="Include" />
-          <e p="level:3.xml" t="Include" />
+          <e p="level:0_b.bin" t="Include" />
+          <e p="level:0_e.bin" t="Include" />
+          <e p="level:1_b.bin" t="Include" />
+          <e p="level:1_e.bin" t="Include" />
+          <e p="level:2_b.bin" t="Include" />
+          <e p="level:2_e.bin" t="Include" />
+          <e p="level:3_b.bin" t="Include" />
+          <e p="level:3_e.bin" t="Include" />
         </e>
         <e p="Microsoft.Xna.Framework.Content.ContentTypeReader" t="Include" />
         <e p="Output.log" t="Include" />

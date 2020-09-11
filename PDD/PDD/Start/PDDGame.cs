@@ -29,7 +29,7 @@ namespace PDD.Start
         private List<Addon> _addons = null!; // TODO
         private SpriteFont _liberationMonoFont = null!;
         internal static Level Level = new Level(), FutureLevel = new Level();
-        internal Stream? LevelLoad = null;
+        internal string? LevelLoad = null;
         private Vector2 _startDrag, _endDrag;
         private bool _dragFrame, _drawDragFrame;
 
@@ -151,7 +151,7 @@ namespace PDD.Start
                                         else
                                         {
                                             var str = CurrentFileOp.ToString();
-                                            Level = Level.Load(File.OpenRead(str));
+                                            Level = Level.Load(str);
                                         }
                                     
                                         CurrentIndicator = "Successfully loaded from file.";

@@ -6,17 +6,8 @@ namespace PDD.DataManagement
 {
     public static class LevelFileManager
     {
-        public static Level Load(int levelNum)
-        {
-            using FileStream stream = File.OpenRead($"Levels/level:{levelNum}.xml");
-            return Level.Load(stream);
-        }
-        
-        public static void Save(int levelNum, Level level)
-        {
-            using StreamWriter stream = new StreamWriter(File.Create($"Levels/level:{levelNum}.xml"), Encoding.UTF8);
-            stream.Write(level.ToString());
-            stream.Close();
-        }
+        public static Level Load(int levelNum) => Level.Load($"Levels/level:{levelNum}");
+
+        public static void Save(int levelNum, Level level) => level.Save($"Levels/level:{levelNum}");
     }
 }

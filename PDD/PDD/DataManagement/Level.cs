@@ -9,6 +9,7 @@ using Additive;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using PDD.Entity;
+using Stacker;
 using Logging = PDD.ConsoleOutput.Logging;
 
 namespace PDD.DataManagement
@@ -17,9 +18,35 @@ namespace PDD.DataManagement
     {
         public struct SerializableLevel
         {
-            public struct Object
+            public class Object : IStackable
             {
                 public int X, Y, Id, Desti;
+                
+                public byte[] Stack()
+                {
+                    List<byte> list = new List<byte>();
+                    list.AddRange(BitConverter.GetBytes(X));
+                    list.AddRange(BitConverter.GetBytes(Y));
+                    list.AddRange(BitConverter.GetBytes(Id));
+                    list.AddRange(BitConverter.GetBytes(Desti));
+                    return list.ToArray();
+                }
+
+                public IStackable Unstack(byte[] bytes)
+                {
+                    X = BitConverter.ToInt32(bytes, 0);
+                    Y = BitConverter.ToInt32(bytes, sizeof(int));
+                    Id = BitConverter.ToInt32(bytes, sizeof(int) * 2);
+                    Desti = BitConverter.ToInt32(bytes, sizeof(int) * 3);
+                    return this;
+                }
+
+                public override string ToString()
+                {
+                    return $"{nameof(X)}: {X}, {nameof(Y)}: {Y}, {nameof(Id)}: {Id}, {nameof(Desti)}: {Desti}";
+                }
+
+                public byte Size => sizeof(int) * 4;
             }
 
             public Object[] Blocks, EntitySpawners;
@@ -102,20 +129,40 @@ namespace PDD.DataManagement
             };
         }
 
-        public void Save(string str = "output.xml") => File.WriteAllText(str, ToString(), Encoding.UTF8);
+        public void Save(string str = "output") => StackToBinary($"{str}_b.bin", $"{str}_e.bin");
 
-        public static Level Load(Stream stream)
+        private void StackToBinary(string blockOutput, string entityOutput)
+        {
+            SingleTypeByteStack<SerializableLevel.Object> objectStack =
+                new SingleTypeByteStack<SerializableLevel.Object>();
+            var level = GetSerializableLevel();
+            foreach (var block in level.Blocks)
+            {
+                objectStack.Add(block);
+            }
+            File.WriteAllBytes(blockOutput, objectStack.Stack());
+            objectStack = new SingleTypeByteStack<SerializableLevel.Object>();
+            foreach (var block in level.EntitySpawners)
+            {
+                objectStack.Add(block);
+            }
+            File.WriteAllBytes(entityOutput, objectStack.Stack());
+        }
+
+        public static Level Load(string name)
         {
             var level = new Level();
             var serializer = new XmlSerializer(typeof(SerializableLevel));
-            var level2 = (SerializableLevel) serializer.Deserialize(stream);
+            var levelBlocks = SingleTypeByteStack<SerializableLevel.Object>.Unstack(File.ReadAllBytes($"{name}_b.bin"));
+            var levelEntities = SingleTypeByteStack<SerializableLevel.Object>.Unstack(File.ReadAllBytes($"{name}_e.bin"));
             PortalData.Destinations.Clear();
-            foreach (var level2Obj in level2.Blocks)
+            foreach (var levelObj in levelBlocks.Stackables)
             {
-                level.Tiles[new LevelIndex(level2Obj.X, level2Obj.Y)] = level2Obj.Id;
-                if (level2Obj.Id == Tile.Tiles.Portal)
+                Logging.Info(levelObj.ToString()!);
+                level.Tiles[new LevelIndex(levelObj.X, levelObj.Y)] = levelObj.Id;
+                if (levelObj.Id == Tile.Tiles.Portal)
                 {
-                    PortalData.Destinations[new LevelIndex(level2Obj.X, level2Obj.Y)] = level2Obj.Desti;
+                    PortalData.Destinations[new LevelIndex(levelObj.X, levelObj.Y)] = levelObj.Desti;
                 }
             }
             foreach (var (key, value) in PortalData.Destinations)
@@ -123,8 +170,12 @@ namespace PDD.DataManagement
                 Logging.Info($"The portal at {key.X}, {key.Y} sends you to {value}");
             }
 
-            foreach (var level2Obj in level2.EntitySpawners)
-                level.Entities.Add(Entity.Entities.GetNew(level2Obj.Id, new Vector2(level2Obj.X, level2Obj.Y)));
+            foreach (var levelObj in levelEntities.Stackables)
+            {
+                Logging.Info(levelObj.ToString()!);
+                level.Entities.Add(Entity.Entities.GetNew(levelObj.Id, new Vector2(levelObj.X, levelObj.Y)));
+            }
+
             return level;
         }
 

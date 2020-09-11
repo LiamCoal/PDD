@@ -22,7 +22,7 @@ namespace PDD.Start
 
             if (PddGame.Mode == Mode.LevelEditor && args.Length >= 2)
             {
-                game.LevelLoad = File.OpenRead(args[1]);
+                game.LevelLoad = args[1];
             }
 
             game.Run();
