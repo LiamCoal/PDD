@@ -33,6 +33,12 @@
       <Reference Include="Additive, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>..\lib\Additive.dll</HintPath>
       </Reference>
+      <Reference Include="Stacker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\Stacker\Stacker.GenericTypes\bin\Release\netcoreapp3.1\Stacker.dll</HintPath>
+      </Reference>
+      <Reference Include="Stacker.GenericTypes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\Stacker\Stacker.GenericTypes\bin\Release\netcoreapp3.1\Stacker.GenericTypes.dll</HintPath>
+      </Reference>
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Addons\Core" />
