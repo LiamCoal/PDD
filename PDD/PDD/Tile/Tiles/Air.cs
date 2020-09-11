@@ -5,8 +5,6 @@ namespace PDD.Tile
     /*
      * Air is special.
      * It will fill all unused block space automatically.
-     *
-     *   TODO Make above claim true.
      */
     public class Air : Tile
     {
