@@ -19,6 +19,7 @@ namespace PDD.Entity
         public override Size Size => new Size(16, 32);
         public virtual bool Deadly => false;
         protected abstract PlayerIndex PlayerIndex { get; }
+        public bool UsingSounds = true;
 
         private SoundEffect 
             _jumpSound, 
@@ -50,21 +51,29 @@ namespace PDD.Entity
         public override void LoadContent(ContentManager content)
         {
             _texture = content.Load<Texture2D>($"Entity/Player{ToInt(PlayerIndex) - 1}");
-            _jumpSound = content.Load<SoundEffect>("Sound/Jump");
-            _jumpSoundInstance = _jumpSound.CreateInstance();
-            _jumpSoundInstance.IsLooped = false;
-            _landSound = content.Load<SoundEffect>("Sound/Land");
-            _landSoundInstance = _landSound.CreateInstance();
-            _landSoundInstance.IsLooped = false;
-            _dieSound = content.Load<SoundEffect>("Sound/Die");
-            _dieSoundInstance = _dieSound.CreateInstance();
-            _dieSoundInstance.IsLooped = false;
-            _intentionalDieSound = content.Load<SoundEffect>("Sound/IntentionalDie");
-            _intentionalDieSoundInstance = _intentionalDieSound.CreateInstance();
-            _intentionalDieSoundInstance.IsLooped = false;
-            _portalSound = content.Load<SoundEffect>("Sound/Portal");
-            _portalSoundInstance = _portalSound.CreateInstance();
-            _portalSoundInstance.IsLooped = false;
+            try
+            {
+                _jumpSound = content.Load<SoundEffect>("Sound/Jump");
+                _jumpSoundInstance = _jumpSound.CreateInstance();
+                _jumpSoundInstance.IsLooped = false;
+                _landSound = content.Load<SoundEffect>("Sound/Land");
+                _landSoundInstance = _landSound.CreateInstance();
+                _landSoundInstance.IsLooped = false;
+                _dieSound = content.Load<SoundEffect>("Sound/Die");
+                _dieSoundInstance = _dieSound.CreateInstance();
+                _dieSoundInstance.IsLooped = false;
+                _intentionalDieSound = content.Load<SoundEffect>("Sound/IntentionalDie");
+                _intentionalDieSoundInstance = _intentionalDieSound.CreateInstance();
+                _intentionalDieSoundInstance.IsLooped = false;
+                _portalSound = content.Load<SoundEffect>("Sound/Portal");
+                _portalSoundInstance = _portalSound.CreateInstance();
+                _portalSoundInstance.IsLooped = false;
+            }
+            catch (Exception e)
+            {
+                Logging.Error(e.Message);
+                UsingSounds = false;
+            }
         }
 
         private static int ToInt(PlayerIndex index)
@@ -105,8 +114,11 @@ namespace PDD.Entity
             {
                 velocity.Y -= 3.00f;
                 AllowGrounding = false;
-                _jumpSoundInstance.Stop();
-                _jumpSoundInstance.Play();
+                if (UsingSounds)
+                {
+                    _jumpSoundInstance.Stop();
+                    _jumpSoundInstance.Play();
+                }
                 // Logging.Info("Jumping");
             }
 
@@ -129,6 +141,7 @@ namespace PDD.Entity
                     PddGame.CurrentIndicator = "Teleporting...";
                     PddGame.CurrentIndicatorTtl = 120;
                     PddGame.CurrentIndicatorType = IndicatorType.Status;
+                    if (!UsingSounds) return;
                     _portalSoundInstance.Stop();
                     _portalSoundInstance.Play();
                     return;
@@ -160,7 +173,7 @@ namespace PDD.Entity
 
             // Logging.Info($"{velocity}");
             
-            if (!_prevGrounded && Grounded && _landSoundCooldown == 0)
+            if (!_prevGrounded && Grounded && _landSoundCooldown == 0 && UsingSounds)
             {
                 _landSoundInstance.Stop();
                 _landSoundInstance.Play();
@@ -212,15 +225,18 @@ namespace PDD.Entity
             PddGame.CurrentIndicatorTtl = 120;
             PddGame.CurrentIndicatorType = IndicatorType.Status;
             Death?.Invoke(this, EventArgs.Empty);
-            if (intentional)
+            if (UsingSounds)
             {
-                _intentionalDieSoundInstance.Stop();
-                _intentionalDieSoundInstance.Play();
-            }
-            else
-            {
-                _dieSoundInstance.Stop();
-                _dieSoundInstance.Play();
+                if (intentional)
+                {
+                    _intentionalDieSoundInstance.Stop();
+                    _intentionalDieSoundInstance.Play();
+                }
+                else
+                {
+                    _dieSoundInstance.Stop();
+                    _dieSoundInstance.Play();
+                }
             }
             _landSoundCooldown = 5;
         }

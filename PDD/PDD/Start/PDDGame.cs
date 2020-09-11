@@ -52,7 +52,7 @@ namespace PDD.Start
         public static Song BackgroundMusic = null!;
 
         // ReSharper disable once MemberCanBePrivate.Global
-        public const string Version = "0.0.5::09082020/1";
+        public const string Version = "09112020/1a";
 
         public PddGame()
         {
@@ -211,10 +211,17 @@ namespace PDD.Start
             //     });
             // }
 
-            BackgroundMusic = Content.Load<Song>("Sound/Music/BGMusic0");
-            MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume = 0.25f;
-            MediaPlayer.Play(BackgroundMusic);
+            try
+            {
+                BackgroundMusic = Content.Load<Song>("Sound/Music/BGMusic0");
+                MediaPlayer.IsRepeating = true;
+                MediaPlayer.Volume = 0.25f;
+                MediaPlayer.Play(BackgroundMusic);
+            }
+            catch (Exception e)
+            {
+                Error(e.Message);
+            }
 
             Info("Loading content from addons...");
             Events.OnLoadContent(Content);
