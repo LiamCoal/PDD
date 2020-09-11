@@ -1,0 +1,3 @@
+[submodule "Stacker"]
+	path = Stacker
+	url = https://github.com/liamcoal/Stacker.git
