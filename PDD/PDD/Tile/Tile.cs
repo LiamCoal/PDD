@@ -10,7 +10,7 @@ namespace PDD.Tile
     {
         private Texture2D _texture = null!;
         protected abstract string TileTexturePath { get; }
-        internal abstract bool IsSolid { get; } // TODO unused
+        internal abstract bool IsSolid { get; }
         // ReSharper disable once UnusedMember.Global
         internal abstract bool CanFall { get; } // TODO unused
         internal abstract DeadlinessInfo Deadliness { get; }

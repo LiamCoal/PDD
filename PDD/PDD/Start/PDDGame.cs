@@ -45,7 +45,7 @@ namespace PDD.Start
         // ReSharper disable once ConvertToConstant.Global
         // ReSharper disable once FieldCanBeMadeReadOnly.Global
         // ReSharper disable once MemberCanBePrivate.Global
-        public static bool RequireRefresh = false; // TODO
+        public static bool RequireRefresh = false;
         public static Mode Mode = Mode.Default;
         private MouseState _prevMouseState;
         private int _currentBlock, _currentPlaceMode;

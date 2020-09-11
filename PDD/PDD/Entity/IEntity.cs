@@ -9,8 +9,6 @@ using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace PDD.Entity
 {
-    
-    // TODO make better than nothing
     public interface IEntity : IResourceLoader
     {
         public Vector2 Position { get; set; }
